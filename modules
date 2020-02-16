@@ -1,6 +1,6 @@
 GLUON_SITE_FEEDS='ffkt ssidchanger'
 
-PACKAGES_FFKT_REPO=http://10.68.0.203/root/packages
+PACKAGES_FFKT_REPO=http://[2001:678:a8c::203]/root/packages
 PACKAGES_SSIDCHANGER_REPO=https://github.com/freifunk-nord/gluon-ssid-changer.git
 
 
