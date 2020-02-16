@@ -34,8 +34,8 @@ else
 #	GLUON_RELEASE := v2019.1.2~exp$(BUILD_NUMBER)
 endif
 
-#JOBS ?= $(shell cat /proc/cpuinfo | grep processor | wc -l)
-JOBS ?= 16
+JOBS ?= $(shell cat /proc/cpuinfo | grep processor | wc -l)
+#JOBS ?= 16
 
 GLUON_MAKE := ${MAKE} -j ${JOBS} -C ${GLUON_BUILD_DIR} \
 	GLUON_RELEASE=${GLUON_RELEASE} \
