@@ -8,8 +8,7 @@ GLUON_FEATURES := \
     ebtables-filter-multicast \
     ebtables-filter-ra-dhcp \
     mesh-batman-adv-15 \
-    mesh-vpn-fastd \
-    web-mesh-vpn-fastd \
+    mesh-vpn-tunneldigger \
     radvd \
     respondd \
     status-page \
@@ -30,10 +29,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-banner \
 	gluon-nightboot \
     respondd-module-airtime 
-#    rsk-robinson
-
-
-
 
 
 # basic support for USB stack
@@ -218,11 +213,8 @@ GLUON_TLWDR4900_SITE_PACKAGES := $(USB_PACKAGES_BASIC) $(TOOLS_PACKAGES) $(USB_P
 
 DEFAULT_GLUON_RELEASE := $(shell date '+%Y%m%d')
 
-#DEFAULT_GLUON_CHECKOUT := v2018.2.2
-
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
-#GLUON_CHECKOUT ?= $(DEFAULT_GLUON_CHECKOUT)
 
 # Default priority for updates.
 GLUON_PRIORITY ?= 0
@@ -236,4 +228,7 @@ GLUON_LANGS ?= en de
 # Select ath10k Firmware for adhoc
 
 GLUON_WLAN_MESH = 11s
-GLUON_DEPRECATED = full
+
+# Do not build images for deprecated devices
+
+GLUON_DEPRECATED ?= full
