@@ -27,13 +27,15 @@ ifneq (,$(shell git describe --exact-match --tags 2>/dev/null))
 	GLUON_BRANCH := stable
 	GLUON_RELEASE := $(shell git describe --tags 2>/dev/null)
 else
-	GLUON_BRANCH := experimental
+	GLUON_BRANCH := stable
 	EXP_FALLBACK = $(shell date '+%Y%m%d')
 	BUILD_NUMBER ?= $(EXP_FALLBACK)
-	GLUON_RELEASE := v2019.1.2~exp$(BUILD_NUMBER)
+	GLUON_RELEASE := $(BUILD_NUMBER)
+#	GLUON_RELEASE := v2019.1.2~exp$(BUILD_NUMBER)
 endif
 
 JOBS ?= $(shell cat /proc/cpuinfo | grep processor | wc -l)
+#JOBS ?= 16
 
 GLUON_MAKE := ${MAKE} -j ${JOBS} -C ${GLUON_BUILD_DIR} \
 	GLUON_RELEASE=${GLUON_RELEASE} \
@@ -57,7 +59,7 @@ build: gluon-prepare
 
 manifest: build
 	${GLUON_MAKE} manifest
-	mv ${GLUON_BUILD_DIR}/output .
+	#mv ${GLUON_BUILD_DIR}/output .
 
 sign: manifest
 	${GLUON_BUILD_DIR}/contrib/sign.sh ${SECRET_KEY_FILE} output/images/sysupgrade/${GLUON_BRANCH}.manifest
