@@ -7,7 +7,7 @@ SECRET_KEY_FILE ?= ${HOME}/.gluon-secret-key
 
 GLUON_TARGETS ?= \
 #	ar71xx-generic \
-	ar71xx-tiny
+#	ar71xx-tiny
 #	ar71xx-nand \
 #	brcm2708-bcm2708 \
 #	brcm2708-bcm2709 \
@@ -54,7 +54,8 @@ info:
 build: gluon-prepare
 	for target in ${GLUON_TARGETS}; do \
 		echo ""Building target $$target""; \
-		${GLUON_MAKE} GLUON_TARGET="$$target"; \
+		${GLUON_MAKE} GLUON_TARGET=ar71xx-tiny; \
+		#"$$target"; \
 	done
 
 manifest: build
