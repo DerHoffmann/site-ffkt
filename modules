@@ -3,7 +3,6 @@ GLUON_SITE_FEEDS='ffkt ssidchanger'
 PACKAGES_FFKT_REPO=https://gitlab.freifunk-kitzingen.de/derhoffmann/packages-ffkt.git
 PACKAGES_SSIDCHANGER_REPO=https://github.com/freifunk-nord/gluon-ssid-changer.git
 
-#59e5a6795697626293ae17d3d8a3f7a4db185fdb old commit
 
 PACKAGES_FFKT_COMMIT=9162342d9e018add6c4a832aad809463f1e04a2e
 PACKAGES_SSIDCHANGER_COMMIT=f6db033d6568ea27805c9694b20085b8dec5ba87
