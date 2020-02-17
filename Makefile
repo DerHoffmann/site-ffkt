@@ -6,22 +6,22 @@ PATCH_DIR := ${GLUON_BUILD_DIR}/site/patches
 SECRET_KEY_FILE ?= ${HOME}/.gluon-secret-key
 
 GLUON_TARGETS ?= \
-#	ar71xx-generic \
-#	ar71xx-tiny
-#	ar71xx-nand \
-#	brcm2708-bcm2708 \
-#	brcm2708-bcm2709 \
-#	mpc85xx-generic \
-#	mpc85cc-p1020 \
-#	ramips-mt7621 \
-#	sunxi-cortexa7 \
-#	x86-generic \
-#	x86-geode \
-#	x86-64 \
-#	ipq40xx \
-#	ramips-mt7620 \
-#	ramips-mt76x8 \
-#	ramips-rt305x
+	ar71xx-generic \
+	ar71xx-tiny
+	ar71xx-nand \
+	brcm2708-bcm2708 \
+	brcm2708-bcm2709 \
+	mpc85xx-generic \
+	mpc85cc-p1020 \
+	ramips-mt7621 \
+	sunxi-cortexa7 \
+	x86-generic \
+	x86-geode \
+	x86-64 \
+	ipq40xx \
+	ramips-mt7620 \
+	ramips-mt76x8 \
+	ramips-rt305x
 
 ifneq (,$(shell git describe --exact-match --tags 2>/dev/null))
 	GLUON_BRANCH := stable
@@ -54,8 +54,7 @@ info:
 build: gluon-prepare
 	for target in ${GLUON_TARGETS}; do \
 		echo ""Building target $$target""; \
-		${GLUON_MAKE} GLUON_TARGET=ar71xx-tiny; \
-		#"$$target"; \
+		${GLUON_MAKE} GLUON_TARGET="$$target"; \
 	done
 
 manifest: build
