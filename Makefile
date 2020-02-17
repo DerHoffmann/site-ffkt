@@ -5,7 +5,7 @@ GLUON_GIT_REF := v2019.1.1
 PATCH_DIR := ${GLUON_BUILD_DIR}/site/patches
 SECRET_KEY_FILE ?= ${HOME}/.gluon-secret-key
 
-GLUON_TARGETS ?=
+GLUON_TARGETS ?= \
 #	ar71xx-generic \
 	ar71xx-tiny
 #	ar71xx-nand \
