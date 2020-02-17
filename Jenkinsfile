@@ -1,5 +1,5 @@
 node {
-    def GLUON_BRANCH = "v2019.1.1"
+    def GLUON_BRANCH = "v2018.2.1"
     def GLUON_RELEASE = ""
     def PROCS = sh(script: 'nproc', returnStdout: true).toInteger() + 2
     def gluon = {}
