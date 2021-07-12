@@ -23,7 +23,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-banner \
     respondd-module-airtime
 
-DEFAULT_GLUON_RELEASE := v2021.6.0~exp$(shell date '+%Y%m%d%H')
+DEFAULT_GLUON_RELEASE := v2021.1~$(shell date '+%Y%m%d%H')
 
 # Allow overriding the release number from the command line
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
